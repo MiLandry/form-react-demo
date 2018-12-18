@@ -1,5 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from "react"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import CreateEmployee from "./CreateEmployee/CreateEmployee"
+import UpdateEmployee from "./UpdateEmployee/UpdateEmployee"
 
 function BasicExample() {
   return (
@@ -10,21 +12,21 @@ function BasicExample() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/create">Create Employee</Link>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
+            <Link to="/update">Update employee</Link>
           </li>
         </ul>
 
         <hr />
 
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
+        <Route path="/create" component={CreateEmployee} />
+        <Route path="/update" component={UpdateEmployee} />
       </div>
     </Router>
-  );
+  )
 }
 
 function Home() {
@@ -32,7 +34,7 @@ function Home() {
     <div>
       <h2>Home</h2>
     </div>
-  );
+  )
 }
 
 function About() {
@@ -40,7 +42,7 @@ function About() {
     <div>
       <h2>About</h2>
     </div>
-  );
+  )
 }
 
 function Topics({ match }) {
@@ -66,7 +68,7 @@ function Topics({ match }) {
         render={() => <h3>Please select a topic.</h3>}
       />
     </div>
-  );
+  )
 }
 
 function Topic({ match }) {
@@ -74,7 +76,7 @@ function Topic({ match }) {
     <div>
       <h3>{match.params.topicId}</h3>
     </div>
-  );
+  )
 }
 
-export default BasicExample;
+export default BasicExample
